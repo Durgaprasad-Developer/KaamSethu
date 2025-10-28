@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { CheckCircle, User, Verified, Wrench, MapPin, Award, Phone, Check, Edit, Info } from 'lucide-react';
 
 export default function WorkerProfilePreviewPage() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function WorkerProfilePreviewPage() {
         <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
           <h2 className="text-lg font-bold text-[#3B82F6]">KaamSetu</h2>
           <div className="flex items-center gap-2 text-[#6B7280] dark:text-[#9CA3AF] text-sm">
-            <span className="material-symbols-outlined text-base">check_circle</span>
+            <CheckCircle className="w-4 h-4" />
             <span>Step 4 of 4</span>
           </div>
         </div>
@@ -44,9 +45,7 @@ export default function WorkerProfilePreviewPage() {
         {/* Success Message */}
         <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4 mb-6">
           <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">
-              check_circle
-            </span>
+            <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
             <div>
               <h3 className="font-bold text-green-800 dark:text-green-300">
                 Profile Ready!
@@ -64,13 +63,11 @@ export default function WorkerProfilePreviewPage() {
           {/* Card Header */}
           <div className="bg-linear-to-r from-[#3B82F6] to-[#60A5FA] p-6 text-center">
             <div className="w-24 h-24 mx-auto bg-white dark:bg-gray-100 rounded-full flex items-center justify-center mb-3 shadow-lg">
-              <span className="material-symbols-outlined text-[#3B82F6] text-5xl">
-                person
-              </span>
+              <User className="w-12 h-12 text-[#3B82F6]" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-1">{profile.name}</h2>
             <div className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm">
-              <span className="material-symbols-outlined text-base">verified</span>
+              <Verified className="w-4 h-4" />
               <span>Phone Verified</span>
             </div>
           </div>
@@ -80,9 +77,7 @@ export default function WorkerProfilePreviewPage() {
             
             {/* Skill */}
             <div className="flex items-start gap-3 p-4 bg-[#F9FAFB] dark:bg-[#101922] rounded-xl">
-              <span className="material-symbols-outlined text-[#3B82F6] text-2xl">
-                construction
-              </span>
+              <Wrench className="w-6 h-6 text-[#3B82F6] mt-1" />
               <div className="flex-1">
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-1">Skill</p>
                 <p className="font-semibold text-[#1F2937] dark:text-gray-100">
@@ -93,9 +88,7 @@ export default function WorkerProfilePreviewPage() {
 
             {/* Location */}
             <div className="flex items-start gap-3 p-4 bg-[#F9FAFB] dark:bg-[#101922] rounded-xl">
-              <span className="material-symbols-outlined text-[#3B82F6] text-2xl">
-                location_on
-              </span>
+              <MapPin className="w-6 h-6 text-[#3B82F6] mt-1" />
               <div className="flex-1">
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-1">Location</p>
                 <p className="font-semibold text-[#1F2937] dark:text-gray-100">
@@ -106,9 +99,7 @@ export default function WorkerProfilePreviewPage() {
 
             {/* Experience */}
             <div className="flex items-start gap-3 p-4 bg-[#F9FAFB] dark:bg-[#101922] rounded-xl">
-              <span className="material-symbols-outlined text-[#3B82F6] text-2xl">
-                workspace_premium
-              </span>
+              <Award className="w-6 h-6 text-[#3B82F6] mt-1" />
               <div className="flex-1">
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-1">Experience</p>
                 <p className="font-semibold text-[#1F2937] dark:text-gray-100">
@@ -119,9 +110,7 @@ export default function WorkerProfilePreviewPage() {
 
             {/* Phone */}
             <div className="flex items-start gap-3 p-4 bg-[#F9FAFB] dark:bg-[#101922] rounded-xl">
-              <span className="material-symbols-outlined text-[#3B82F6] text-2xl">
-                phone
-              </span>
+              <Phone className="w-6 h-6 text-[#3B82F6] mt-1" />
               <div className="flex-1">
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-1">Contact</p>
                 <p className="font-semibold text-[#1F2937] dark:text-gray-100">
@@ -139,7 +128,7 @@ export default function WorkerProfilePreviewPage() {
             onClick={handleConfirm}
             className="w-full rounded-xl bg-[#3B82F6] text-white py-4 text-lg font-semibold transition-all hover:bg-[#3B82F6]/90 hover:scale-[1.02] active:scale-100 flex items-center justify-center gap-2"
           >
-            <span className="material-symbols-outlined">check</span>
+            <Check className="w-5 h-5" />
             <span>✅ Confirm - Sahi Hai</span>
           </button>
 
@@ -147,14 +136,14 @@ export default function WorkerProfilePreviewPage() {
             onClick={handleEdit}
             className="w-full rounded-xl bg-white dark:bg-[#1F2937] border-2 border-[#3B82F6] text-[#3B82F6] py-3 text-base font-semibold transition-all hover:bg-[#3B82F6]/5 flex items-center justify-center gap-2"
           >
-            <span className="material-symbols-outlined">edit</span>
+            <Edit className="w-5 h-5" />
             <span>✏️ Edit - Badlav Karein</span>
           </button>
         </div>
 
         {/* Privacy Note */}
         <div className="mt-6 flex items-start gap-2 text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-          <span className="material-symbols-outlined text-base">info</span>
+          <Info className="w-4 h-4 mt-0.5" />
           <p>
             Aapki profile sirf verified employers ko dikhegi. Aapki contact details tab share hongi jab aap apply karenge.
           </p>

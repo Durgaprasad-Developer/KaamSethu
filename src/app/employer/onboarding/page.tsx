@@ -2,6 +2,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { Briefcase, CheckCircle, ShieldCheck, CreditCard } from 'lucide-react';
 
 export default function EmployerOnboardingPage() {
   const router = useRouter();
@@ -23,9 +24,7 @@ export default function EmployerOnboardingPage() {
               <div className="flex flex-col items-center gap-6">
                 {/* Icon */}
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#3B82F6]/10">
-                  <span className="material-symbols-outlined text-[#3B82F6] text-5xl">
-                    work
-                  </span>
+                  <Briefcase className="text-[#3B82F6] w-12 h-12" />
                 </div>
 
                 {/* Heading */}
@@ -41,9 +40,7 @@ export default function EmployerOnboardingPage() {
                 {/* Features */}
                 <div className="w-full space-y-4">
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-[#3B82F6] mt-1">
-                      check_circle
-                    </span>
+                    <CheckCircle className="text-[#3B82F6] w-6 h-6 mt-1" />
                     <div>
                       <h3 className="text-[#1F2937] dark:text-gray-100 font-semibold">
                         Instant Matching
@@ -55,9 +52,7 @@ export default function EmployerOnboardingPage() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-[#3B82F6] mt-1">
-                      verified_user
-                    </span>
+                    <ShieldCheck className="text-[#3B82F6] w-6 h-6 mt-1" />
                     <div>
                       <h3 className="text-[#1F2937] dark:text-gray-100 font-semibold">
                         Verified Profiles
@@ -69,9 +64,7 @@ export default function EmployerOnboardingPage() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-[#3B82F6] mt-1">
-                      payments
-                    </span>
+                    <CreditCard className="text-[#3B82F6] w-6 h-6 mt-1" />
                     <div>
                       <h3 className="text-[#1F2937] dark:text-gray-100 font-semibold">
                         Safe Payments

@@ -4,9 +4,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { 
-  Home, Briefcase, User, Bell, MapPin, Phone, 
+  Home, Briefcase, User, MapPin, Phone, 
   Star, ShieldCheck, TrendingUp, ChevronRight 
 } from 'lucide-react';
+import LocationHeader from '@/components/LocationHeader';
 
 const mockJobs = [
   {
@@ -54,27 +55,12 @@ export default function WorkerDashboardPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
       
-      {/* Header */}
-      <header className="glass-dark sticky top-0 z-10 border-b border-slate-700 shadow-sm backdrop-blur-lg">
-        <div className="max-w-2xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
-                <Briefcase className="text-white w-5 h-5" />
-              </div>
-              <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                KaamSetu
-              </h2>
-            </div>
-            <button className="relative w-11 h-11 flex items-center justify-center rounded-full hover:bg-slate-700 transition-colors">
-              <Bell className="text-gray-300 w-5 h-5" />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
-            </button>
-          </div>
+      <main className="flex-1 max-w-2xl mx-auto w-full pb-24 pt-4">
+        
+        {/* Location Header */}
+        <div className="px-4 py-3 border-b border-slate-700">
+          <LocationHeader className="text-gray-200" />
         </div>
-      </header>
-
-      <main className="flex-1 max-w-2xl mx-auto w-full pb-24">
         
         {/* Home Tab Content */}
         {activeTab === "home" && (

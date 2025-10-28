@@ -5,8 +5,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { 
   Wrench, Zap, Hammer, PaintBucket, Sparkles, 
-  Car, ChefHat, HandHelping, Bot, MapPin, Search, Info 
+  Car, ChefHat, HandHelping, Bot, Search, Info 
 } from 'lucide-react';
+import LocationPicker from '@/components/LocationPicker';
+import { LocationData } from '@/lib/services/location';
 
 const popularSkills = [
   { name: "Plumber", icon: Wrench, hindi: "नल का काम" },
@@ -25,6 +27,7 @@ export default function EmployerPostJobPage() {
   const [budget, setBudget] = useState("");
   const [description, setDescription] = useState("");
   const [startImmediately, setStartImmediately] = useState(true);
+  const [location, setLocation] = useState<LocationData | null>(null);
 
   const handlePostJob = (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,28 +110,17 @@ export default function EmployerPostJobPage() {
             </div>
           </div>
 
-          {/* Location (Auto-filled) */}
+          {/* Location */}
           <div className="bg-white dark:bg-[#1F2937] rounded-xl shadow-sm p-6">
             <label className="block text-base font-semibold text-[#1F2937] dark:text-gray-100 mb-3">
               Location
             </label>
-            <div className="flex items-center gap-3 p-4 bg-[#F9FAFB] dark:bg-[#101922] rounded-lg">
-              <MapPin className="w-5 h-5 text-[#3B82F6]" />
-              <div className="flex-1">
-                <p className="font-medium text-[#1F2937] dark:text-gray-100">
-                  Andheri West, Mumbai
-                </p>
-                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-                  Auto-detected from your location
-                </p>
-              </div>
-              <button
-                type="button"
-                className="text-[#3B82F6] text-sm font-medium hover:underline"
-              >
-                Change
-              </button>
-            </div>
+            <LocationPicker
+              value={location?.address}
+              onLocationSelect={setLocation}
+              placeholder="Enter job location"
+              className="w-full"
+            />
           </div>
 
           {/* Budget */}
